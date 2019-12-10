@@ -1,0 +1,23 @@
+.menu ul {
+  padding: 0px;
+  margin: 0px;
+  float: right;
+  width: 100%;
+}
+
+.menu ul li {
+  display: block;
+  padding: 1rem;
+}
+
+.menu ul li:hover {
+  background-color: #b5b5b5;
+  cursor: pointer;
+}
+
+.menu ul li a {
+  color: black;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
