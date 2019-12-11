@@ -1,9 +1,4 @@
-.input-container form {
-  width: 40%;
-  margin-top: 3rem;
-}
-
-.input-container form .form-group span {
+.input-container .form-group span {
   color: red;
   padding: 0.5rem;
 }
@@ -12,13 +7,17 @@
   margin-left: 1rem;
 }
 
+.remove-border {
+  border: none;
+}
+
 .input-container input {
-  background-color: #f5f6fa!important;
+  background-color: #f5f6fa !important;
   color: #6a7080;
   padding: 1.5rem;
   border-radius: 2rem;
-  border: none;
-  box-shadow: none!important;
+  
+  box-shadow: none !important;
 }
 
 textarea:focus,
@@ -38,6 +37,10 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus .form-control:focus {
-  border-color: #f5f6fa !important;  
-  box-shadow: none!important;
+  border-color: #f5f6fa !important;
+  box-shadow: none !important;
+}
+
+.input-container .input-error {
+  border-color: red !important;
 }
