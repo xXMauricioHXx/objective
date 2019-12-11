@@ -20,7 +20,7 @@ const Menu = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <i class="material-icons">menu</i>
+          <i className="material-icons">menu</i>
         </button>
         <div>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">

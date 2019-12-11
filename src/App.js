@@ -12,7 +12,7 @@ function App() {
           <div className="col-12 p-0">
             <Menu />
           </div>
-          <div className="col-xs-12 content">
+          <div className="col-xs-12 container">
             <Switch>
               <Route path="/home">
                 <Home />
