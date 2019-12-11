@@ -1,3 +1,31 @@
+.navbar-brand {
+  color: white !important;
+}
+
+.menu {
+  background-color: #08192d;
+  color: white !important;
+}
+
+.menu button {
+  margin-left: inherit;
+}
+
+.menu i { 
+  font-size: 28pt;
+  font-weight: 100;
+  color: #fff!important;
+}
+
+.menu h4 {  
+  font-weight: 900;
+  letter-spacing: 3px;;
+}
+
+.menu h4 span {
+  color: #fc0254!important;
+}
+
 .menu ul {
   padding: 0px;
   margin: 0px;
@@ -7,17 +35,22 @@
 
 .menu ul li {
   display: block;
-  padding: 1rem;
+  padding: 1rem 2.5rem;
 }
 
-.menu ul li:hover {
-  background-color: #b5b5b5;
+.menu ul li:hover {  
   cursor: pointer;
 }
 
 .menu ul li a {
-  color: black;
+  color: white !important;
   display: block;
   width: 100%;
   text-decoration: none;
 }
+
+.menu ul li a:hover {
+  color: #fc0254!important;
+}
+
+
