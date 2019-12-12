@@ -4,47 +4,57 @@ import "./styles/Input.css";
 class Input extends React.Component {
   constructor(props) {
     super();
+    this.props = props;
     this.state = {
-      required: props.required,
-      label: props.label,
-      type: props.type,
-      placeholder: props.placeholder,
       value: "",
-      field: props.field,
-      updateValue: props.updateValue,
       error: false,
+      errorMessage: ""
     };
+    this.checkError = this.checkError.bind(this);
+  }
+
+  checkError() {
+    const errors = this.props.hasErrors();
+    this.setState({ error: false });
+    errors.forEach(error => {      
+      const message = error[this.props.field];      
+      if (message) {
+        this.setState({ errorMessage: message, error: true });
+      }
+    });
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
-    this.state.updateValue(this.state.value, this.state.field);
-  }
-
-  handleValidate(event) {
     const value = event.target.value;
-    console.log(value);
-    if (!value) {
-      this.setState({error: true})
-    }
+    this.props.updateValue(value, this.props.field);
+    this.setState({ value });    
   }
 
+  handleBlur() {
+    this.checkError();
+  }
 
   render() {
     return (
       <div className="input-container">
         <div className="form-group">
           <label>
-            {this.state.label} {this.state.required && <span>*</span>}
+            {this.props.label} {this.props.required && <span>*</span>}
           </label>
           <input
-            type={this.state.type}
-            className={`form-control ${this.state.error ? 'input-error' : 'remove-border'}`}
-            placeholder={this.state.placeholder}
+            type={this.props.type}
+            className={`form-control ${
+              this.state.error ? "input-error" : "remove-border"
+            }`}
+            placeholder={this.props.placeholder}
             value={this.state.value}
             onChange={this.handleChange.bind(this)}
-            onBlur={this.handleValidate.bind(this)}
+            onBlur={this.handleBlur.bind(this)}
           />
+
+          {this.state.errorMessage && this.state.error && (
+            <small className="form-text ">{this.state.errorMessage}</small>
+          )}
         </div>
       </div>
     );

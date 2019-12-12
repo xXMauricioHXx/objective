@@ -1,9 +1,9 @@
-.input-container .form-group span {
-  color: red;
+.input-container .form-group span, small {
+  color: #f54242!important;
   padding: 0.5rem;
 }
 
-.input-container label {
+.input-container label, small {
   margin-left: 1rem;
 }
 
