@@ -14,20 +14,24 @@ class Input extends React.Component {
   }
 
   checkError() {
-    const errors = this.props.hasErrors();
-    this.setState({ error: false });
-    errors.forEach(error => {      
-      const message = error[this.props.field];      
-      if (message) {
-        this.setState({ errorMessage: message, error: true });
-      }
-    });
+    if (this.props.hasErrors) {
+      const errors = this.props.hasErrors();      
+      this.setState({ error: false });
+      errors.forEach(error => {
+        console.log(error);
+        const message = error[this.props.field];        
+        if (message) {
+          this.setState({ errorMessage: message, error: true });
+        }
+      });
+    }
   }
 
   handleChange(event) {
     const value = event.target.value;
     this.props.updateValue(value, this.props.field);
-    this.setState({ value });    
+    this.setState({ value });
+    this.checkError();
   }
 
   handleBlur() {

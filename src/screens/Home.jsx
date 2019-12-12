@@ -9,9 +9,13 @@ class Home extends React.Component {
     this.formSchema = [
       {
         field: "wish",
-        rules: ["required"],
+        rules: ["required", "max", "min"],
         min: 5,
         max: 10
+      }, 
+      {
+        field: "value",
+        rules: ["required"]
       }
     ];
     this.state = {
@@ -30,7 +34,7 @@ class Home extends React.Component {
       this.formSchema,
       this.state
     );
-    console.log(validForm);
+    console.log(errors);
     this.setState({ validForm, errors });
     return this.state.errors;
   }
@@ -61,7 +65,7 @@ class Home extends React.Component {
             required={true}
             field="value"
             updateValue={this.handleUpdate.bind(this)}
-            pipes={["currency"]}
+            hasErrors={this.checkErrors.bind(this)}
           />
         </form>
       </div>
