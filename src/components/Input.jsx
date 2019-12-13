@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/Input.css";
+import { price } from "../helper/mask";
 
 class Input extends React.Component {
   constructor(props) {
@@ -11,15 +12,15 @@ class Input extends React.Component {
       errorMessage: ""
     };
     this.checkError = this.checkError.bind(this);
+    this.applyPipes = this.applyPipes.bind(this);
   }
 
   checkError() {
     if (this.props.hasErrors) {
-      const errors = this.props.hasErrors();      
+      const errors = this.props.hasErrors();
       this.setState({ error: false });
       errors.forEach(error => {
-        console.log(error);
-        const message = error[this.props.field];        
+        const message = error[this.props.field];
         if (message) {
           this.setState({ errorMessage: message, error: true });
         }
@@ -27,10 +28,26 @@ class Input extends React.Component {
     }
   }
 
-  handleChange(event) {
-    const value = event.target.value;
+  applyPipes(value) {
+    const pipes = this.props.pipes;
+    if (pipes && pipes.length) {
+      pipes.forEach(pipe => {
+        if (pipe === "currency") {
+          value = price(value);
+          if (value === 'R$ 0,00') {
+            value = '';
+          }
+        }
+      });
+      
+    }
     this.props.updateValue(value, this.props.field);
     this.setState({ value });
+  }
+
+  handleChange(event) {
+    const value = event.target.value;
+    this.applyPipes(value);
     this.checkError();
   }
 

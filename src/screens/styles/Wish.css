@@ -1,0 +1,17 @@
+.screen form {
+  width: 50%;
+}
+
+.wish button {
+  margin-top: 1rem;
+}
+
+.wish .input-container {
+  margin-bottom: 2rem;
+}
+
+@media(max-width: 576px) {
+  .screen form {
+    width: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+
+table .column-bar-progress {
+  width: 50%;
+}
+
+table .progress-bar {
+  background-color: #fc0254;
+}
+
+table img {
+  display: block;
+  margin: 0px auto;
+}
+
+table .table-divider {
+  height: 1rem;
+}
+
+table tbody tr td {
+  padding: 1.3rem 0px;
+  border-radius: 1rem;
+}

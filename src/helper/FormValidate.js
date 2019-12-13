@@ -4,6 +4,8 @@ export class FormValidate {
   }
 
   run(schema, state) {
+    state.errors = [];
+    state.validForm = true;
     schema.forEach(schema => {
       this.rules.forEach(rule => {
         if (schema.rules.includes(rule)) {
@@ -32,12 +34,7 @@ export class FormValidate {
           [schema.field]: "This field accept max 5 characteres."
         });
       }
-    } else {
-      if (this.verifyErrors(errors, field)) {
-        state.errors = this.removeOldError(errors, field);
-        state.validForm = true;
-      }
-    }
+    } 
     return state;
   }
 
@@ -51,10 +48,6 @@ export class FormValidate {
           [schema.field]: "This field accept min 5 characteres."
         });
       }
-    } else {
-      if (this.verifyErrors(errors, field)) {
-        state.errors = this.removeOldError(errors, field);        
-      }
     }
     return state;
   }
@@ -62,18 +55,13 @@ export class FormValidate {
   required(schema, state) {
     const { form, errors } = state;
     const { field } = schema;
+    console.log(form[field]);
     if (!form[field]) {
       state.validForm = false;
       if (!this.verifyErrors(errors, field)) {
         state.errors.push({
           [schema.field]: "This field is required."
         });
-      }
-    } else {
-      
-      if (this.verifyErrors(errors, field)) {
-        state.errors = this.removeOldError(errors, field);
-        state.validForm = true;
       }
     }
     return state;

@@ -1,9 +1,0 @@
-.screen form {
-  width: 50%;
-}
-
-@media(max-width: 576px) {
-  .screen form {
-    width: 100%;
-  }
-}

@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./components/Menu";
-import Home from "./screens/Home";
+import Wish from "./screens/Wish";
 import "./App.css";
+import Home from "./screens/Home";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             <Switch>
               <Route path="/home">
                 <Home />
+              </Route>
+              <Route path="/wish">
+                <Wish />
               </Route>
             </Switch>
           </div>

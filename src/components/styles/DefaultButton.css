@@ -1,26 +1,21 @@
 .button-default {
-  padding: var(--button-medium-padding);
-  background-color: var(--default-button-bg)!important;
-  border-color: var(--default-button-bg)!important;
-  border-radius: 0px!important;
-  -webkit-box-shadow: 0px 5px 4px 0px rgba(168, 168, 168, 1);
-  -moz-box-shadow: 0px 5px 4px 0px rgba(168, 168, 168, 1);
-  box-shadow: 0px 5px 4px 0px rgba(168, 168, 168, 1);
-  transition: .5s;
-  
+  padding: .8rem 5rem !important;
+  background-color: #383b70;
+  border-color: #383b70;
+  border-radius: 50px !important;
+  transition: 0.5s;
 }
+
 button:focus {
-  border-color: rgba(186, 28, 181, 0.8)!important;
-  box-shadow: 0 1px 1px rgba(186, 28, 181, 0.075) inset, 0 0 8px rgba(186, 28, 181, 0.6)!important;
-  outline: 0 none!important;
+  outline: 0 none !important;
 }
 
 .button-default:hover {
-  background-color: var(--default-button-bg-hover)!important;
-  border-color: var(--default-button-bg-hover)!important;
+  background-color: #2c2e57!important;
+  border-color: #2c2e57!important;
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
   .button-default {
     width: 100%;
   }

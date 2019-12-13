@@ -1,0 +1,22 @@
+.button-primary {
+  padding: .8rem 5rem !important;
+  background-color: #fc0254 !important;
+  border-color: #fc0254 !important;
+  border-radius: 50px !important;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+.button-primary:hover {
+  background-color: #af063e !important;
+}
+
+button:focus {
+  outline: 0 none !important;
+}
+
+@media (max-width: 576px) {
+  .button-primary {
+    width: 100%;
+  }
+}
