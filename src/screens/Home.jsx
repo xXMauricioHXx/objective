@@ -8,30 +8,22 @@ class Home extends React.Component {
     return (
       <div className="mt-5 screen home">
         <Card>
-          <h1 className="mb-5">Home</h1>
-
           <Table
-            headers={["", "Wish", "Price", "", ""]}
             columns={[
-              <img src={"./assets/imgs/travel.png"} alt="Travel" />,
-              "Travel",
-              "R$ 5.0000",
-              <div class="progress">
-                <div
-                  className="progress-bar"
-                  role="progressbar"
-                  style={{ width: "25%" }}
-                  aria-valuenow="25"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                >
-                  25%
-                </div>
-              </div>,
-              <i class="material-icons">edit</i>,
-              <i class="material-icons">delete</i>
+              {
+                img: "./assets/imgs/travel.png",
+                wish: "Travel",
+                price: "R$ 5.000,00",
+                percent: 10
+              },
+              {
+                img: "./assets/imgs/meat.png",
+                wish: "Food",
+                price: "R$ 120,00",
+                percent: 57
+              }
             ]}
-          />          
+          />         
         </Card>
       </div>
     );
